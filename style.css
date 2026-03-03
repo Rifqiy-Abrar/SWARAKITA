@@ -1,144 +1,410 @@
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-}
-
 body {
-  background: #f5f5f5;
-  color: #333;
-}
- 
-.topbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #007bff;
-  color: white;
-  padding: 10px 20px;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #f4f8fc !important;
 }
 
-.topbar-left {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+section {
+  padding: 50px 20px;
 }
 
-.logo-inline {
-  height: 50px;
-}
-
-.judul {
-  font-size: 18px;
+button {
+  background-color: #1ECAD3;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
   font-weight: bold;
 }
 
-.btn-login {
-  background: white;
-  color: #007bff;
-  border: none;
-  padding: 6px 12px;
-  cursor: pointer;
-  border-radius: 6px;
+button:hover {
+  opacity: 0.8;
 }
 
-.btn-login:hover {
-  background: #e6e6e6;
+.card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #0B2A4A;
 }
 
-/* =======================
-   SECTION
-======================= */
+.card p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #555;
+}
 
-.content-section {
-  padding: 20px;
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 100px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.9);
+    width: 320px;
+    min-height: 320px;
+    padding: 40px 30px;
+    border-radius: 25px;
+
+    backdrop-filter: blur(10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+}
+.card::before {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 5px;
+    background: linear-gradient(to right, #1ECAD3, #0B2A4A);
+    border-radius: 10px;
+    margin: 0 auto 20px auto;
+}
+
+
+.highlight {
+  border: 3px solid #1ECAD3;
 }
 
 .hidden {
   display: none;
 }
 
-.section-title {
-  margin-bottom: 15px;
+input, select, textarea {
+  display: block;
+  width: 80%;
+  margin: 10px auto;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+}
+select, textarea {
+  width: 80%;
+  max-width: 500px;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  font-size: 14px;
 }
 
-
-/* =======================
-   CARD MENU
-======================= */
-
-.cards {
+form {
+  margin-top: 20px;
+}
+/* CENTER TOTAL HALAMAN */
+.welcome-center {
+  min-height: 100vh;
   display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.card {
-  background: white;
-  padding: 15px;
+/* JUDUL BESAR */
+.welcome-title {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Logo di dalam teks */
+.logo-inline {
+  height: 60px;
+  vertical-align: middle;
+}
+
+/* Subjudul */
+.welcome-subtitle {
+  font-size: 22px;
+  margin-bottom: 30px;
+}
+
+/* Tombol dengan efek keren */
+.btn-start {
+  background-color: #1ECAD3;
+  border: none;
+  padding: 14px 30px;
   border-radius: 10px;
   cursor: pointer;
-  width: 200px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  font-weight: bold;
+  font-size: 16px;
+  transition: all 0.3s ease;
 }
 
-.card:hover {
-  background: #f0f0f0;
+/* Efek hover */
+.btn-start:hover {
+  background-color: white;
+  color: #0B2A4A;
+  transform: scale(1.08);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+.hidden {
+  display: none;
+}
+.logo-inline {
+    height: 80px;
+  
+.top-header {
+    background-color: #0B2A4A;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
-.card.highlight {
-  background: #007bff;
-  color: white;
+.header-logo {
+    height: 80px;
 }
 
-/* =======================
-   INPUT & FORM
-======================= */
+.top-header {
+    width: 100%;
+    height: 150px;
+    background-color: #0B2A4A !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
 
-input, textarea, select {
-  width: 100%;
-  padding: 8px;
-  margin-top: 8px;
-  margin-bottom: 12px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
+.header-logo {
+    height: 90px;
+}
+    
+.section-title {
+    font-size: 32px;
+    margin-bottom: 60px;
+    color: #0B2A4A;
+}
+
+    
+.card {
+    background: white;
+    border: none;
+}
+.card {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 0.8s ease forwards;
+}
+
+.card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.card:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+#menu {
+    width: 100%;
+    padding: 80px 20px;
+    text-align: center;
+}
+.card {
+    position: relative;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 5px;
+    background: linear-gradient(to right, #1ECAD3, #0B2A4A);
+    border-radius: 10px;
+}
+.hidden {
+    display: none;
+}
+
+.content-section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f8fc;
+    padding: 20px;
+}
+
+.content-box {
+    background: white;
+    padding: 50px;
+    border-radius: 20px;
+    width: 600px;
+    max-width: 90%;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    text-align: center;
+}
+.content-section {
+    transition: opacity 0.3s ease;
+}
+select, textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-family: inherit;
+}
+
+textarea {
+    resize: none;
 }
 
 button {
-  padding: 8px 14px;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    margin: 5px;
+}
+
+button[type="submit"] {
+    background: linear-gradient(to right, #1ECAD3, #0B2A4A);
+    color: white;
+}
+
+button[type="button"] {
+    background: #ddd;
+}
+.section-layanan {
+  text-align: center;
+}
+
+.section-layanan h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 60px;
+}
+.content-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+
+.form-wrapper {
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 25px;
+  text-align: left; /* label tetap rapi */
+}
+
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+textarea {
+  min-height: 120px;
+  resize: none;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+.form-wrapper {
+  text-align: center;
+}
+
+.form-group {
+  text-align: center;
+}
+.btn-start {
+  margin-top: 20px;
+  padding: 12px 20px;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
+  background: #2563eb;
+  color: white;
   cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease; /* animasi transisi */
 }
 
-button:hover {
-  opacity: 0.9;
+.btn-start:hover {
+  background: #1e40af;
+  transform: scale(1.05); /* efek membesar sedikit */
 }
 
-/* =======================
-   ADMIN PAGE
-======================= */
+.btn-start:active {
+  transform: scale(0.95); /* efek mengecil saat ditekan */
+}
+#tentang, #panduan, #kirimlaporan {
+  display: flex;
+  flex-direction: column;   /* susun elemen ke bawah */
+  justify-content: center;  /* vertikal tengah */
+  align-items: center;      /* horizontal tengah */
+  min-height: 100vh;        /* penuh tinggi layar */
+  text-align: center;       /* teks rata tengah */
+}
 
-.admin-box {
+/* ===== NAVBAR BARU ===== */
+
+.topbar {
+  width: 100%;
+  height: 60px;
+  background: linear-gradient(to right, #1ECAD3, #0B2A4A);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 25px;
+  box-sizing: border-box;
+}
+
+.topbar-title {
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.topbar-admin {
   background: white;
-  padding: 15px;
-  border-radius: 10px;
+  color: #0B2A4A;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
 }
 
-.laporan-item {
-  border-bottom: 1px solid #ddd;
-  padding: 8px 0;
+.topbar-admin:hover {
+  background: #e6f7ff;
 }
-
-/* =======================
-   LOGIN BOX
-======================= */
-
-.login-box {
-  background: white;
-  padding: 15px;
-  border-radius: 10px;
-  max-width: 300px;
+.hidden {
+  display: none;
 }
