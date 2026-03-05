@@ -374,39 +374,63 @@ textarea {
 
 /* ===== NAVBAR BARU ===== */
 
+/* ===== NAVBAR SWARAKITA ===== */
+
 .topbar {
   width: 100%;
-  height: 60px;
+  height: 70px;
   background: linear-gradient(to right, #1ECAD3, #0B2A4A);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 25px;
+  padding: 0 40px;
   box-sizing: border-box;
 }
 
-.topbar-title {
+.topbar-left {
   color: white;
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
-.topbar-admin {
-  background: white;
-  color: #0B2A4A;
-  border: none;
-  padding: 8px 14px;
-  border-radius: 8px;
+.topbar-menu {
+  display: flex;
+  gap: 30px;
+}
+
+.topbar-menu span {
+  color: white;
+  font-weight: 500;
   cursor: pointer;
-  font-weight: 600;
-  transition: 0.3s;
+  position: relative;
+  transition: 0.3s ease;
 }
 
-.topbar-admin:hover {
-  background: #e6f7ff;
+.topbar-menu span:hover {
+  opacity: 0.8;
+}
+
+/* efek garis bawah halus saat hover */
+.topbar-menu span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background: white;
+  transition: 0.3s ease;
+}
+
+.topbar-menu span:hover::after {
+  width: 100%;
 }
 .topbar {
   transition: opacity 0.3s ease;
+}
+.topbar {
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
 }
 .hidden {
   display: none;
