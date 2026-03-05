@@ -65,26 +65,31 @@ window.bukaAdmin = function () {
 // SUBMIT LAPORAN
 ///////////////////////////////
 
+import { db, collection, addDoc } from "./firebase.js";
+
+// Ambil form
 const form = document.getElementById("laporForm");
 
 if (form) {
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
+    const judul = document.getElementById("judulLaporan").value;
     const kategori = document.getElementById("kategori").value;
     const isi = document.getElementById("isilaporan").value;
 
+    // Kirim ke Firebase
     await addDoc(collection(db, "laporan"), {
+      judul,      // judul laporan
       kategori,
       isi,
       tanggal: new Date()
     });
 
-    alert("Laporan terkirim");
+    alert("Laporan terkirim!");
     form.reset();
   });
 }
-
 ///////////////////////////////
 // ADMIN LOAD DATA
 ///////////////////////////////
