@@ -35,7 +35,7 @@ window.login = function () {
     const data = doc.data();
     list.innerHTML += `
       <div class="admin-card">
-        <h4>${data.judul} (${data.kategori})</h4>
+        <h4>${data.judul  || "Tidak ada judul"} (${data.kategori})</h4>
         <p>${data.isi}</p>
         <small>${new Date(data.tanggal.seconds * 1000).toLocaleString()}</small>
       </div>
