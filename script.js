@@ -1,7 +1,7 @@
 import { db, collection, addDoc, getDocs, query, orderBy }
 from "./firebase.js";
 
-function showSection(id) {
+window.showSection = function (id) {
   document.querySelectorAll(".content-section").forEach(section => {
     section.classList.add("hidden");
   });
@@ -12,7 +12,7 @@ function showSection(id) {
   }
 }
 
-function masuk() {
+window.masuk = function() {
   showSection("menu");
 
   const navbar = document.getElementById("navbar");
@@ -31,7 +31,7 @@ window.showMenu = showMenu;
 window.masuk = masuk;
 
 window.addEventListener("DOMContentLoaded", () => {
-  showSection("welcome");
+  showSection("welcomeText");
 });
 window.kembaliHome = function () {
   location.reload();
