@@ -15,26 +15,30 @@ window.login = function () {
   }
 };
 
-async function loadLaporan() {
+  window.loadLaporan = async function() {
   const list = document.getElementById("adminList");
+  if (!list) return;
 
-  const q = query(
-    collection(db, "laporan"),
-    orderBy("tanggal", "desc")
-  );
+  list.innerHTML = "Loading...";
 
-  const snap = await getDocs(q);
+  const q = query(collection(db, "laporan"), orderBy("tanggal", "desc"));
+  const querySnapshot = await getDocs(q);
 
   list.innerHTML = "";
 
-  snap.forEach((doc) => {
-    const d = doc.data();
+  if (querySnapshot.empty) {
+    list.innerHTML = "<p>Belum ada laporan</p>";
+    return;
+  }
 
+  querySnapshot.forEach((doc) => {
+    const data = doc.data();
     list.innerHTML += `
       <div class="admin-card">
-        <h4>${d.kategori}</h4>
-        <p>${d.isi}</p>
+        <h4>${data.judul} (${data.kategori})</h4>
+        <p>${data.isi}</p>
+        <small>${new Date(data.tanggal.seconds * 1000).toLocaleString()}</small>
       </div>
     `;
   });
-}
+};
