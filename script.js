@@ -32,6 +32,8 @@ window.showSection = function (id) {
   if (id === "adminPage") {
     loadLaporan();
   }
+  window.showSection = showSection;
+  window.showMenu = showMenu;
 };
 
 window.showMenu = function () {
