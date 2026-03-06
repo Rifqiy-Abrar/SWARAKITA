@@ -25,13 +25,4 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-
 export { db, collection, addDoc, getDocs, query, orderBy };
-
-addDoc(collection(db,"laporan"),{
-  id:idLaporan,
-  kategori:kategori,
-  judul:judul,
-  isi:isilaporan,
-  status:"Diproses"
-});
