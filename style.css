@@ -319,14 +319,14 @@ form {
   width: 100%;
 }
 
-.welcome-logo{
-  width: 260px;
-  margin-top: 10px;
-  margin-bottom: 30px;
-}
-
 body {
   padding-top: 70px;
+}
+
+.welcome-logo{
+  width: 280px;
+  margin: 20px 0 35px 0;
+  filter: drop-shadow(0 8px 20px rgba(0,0,0,0.2));
 }
 
 .hidden {
