@@ -123,21 +123,28 @@
 </section>
 
 <!-- tracking -->
+<!-- TRACKING -->
 <section id="tracking" class="content-section hidden">
   <div class="content-box">
-    <h2>Tracking Laporan</h2>
-    <p>Masukkan kode laporan untuk melihat statusnya.</p>
 
-    <div class="form-group">
-      <label>Kode Laporan</label>
-      <input type="text" id="kodeTracking" placeholder="Contoh: SWK-12345">
-    </div>
+    <h2>Cek Status Laporan</h2>
 
-    <button class="btn-start" onclick="cekTracking()">Cek Status</button>
+    <input
+      type="text"
+      id="trackingId"
+      placeholder="Masukkan ID laporan"
+    >
+
+    <button class="btn-start" onclick="cekStatus()">
+      Cek Status
+    </button>
 
     <div id="hasilTracking"></div>
 
-    <button class="btn-start" onclick="showMenu()">Kembali</button>
+    <button class="btn-start" onclick="showMenu()">
+      Kembali
+    </button>
+
   </div>
 </section>
 <!-- KONFIRMASI -->
