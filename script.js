@@ -14,8 +14,6 @@ window.masuk = function () {
   document.getElementById("welcomeText").classList.add("hidden");
   document.getElementById("menu").classList.remove("hidden");
 
-  showSection("menu");
-
   // tampilkan navbar
   document.getElementById("navbar").classList.remove("hidden");
 };
@@ -25,8 +23,6 @@ window.showSection = function (id) {
     sec.classList.add("hidden");
   });
 
-  document.getElementById("menu").classList.add("hidden");
-
   const target = document.getElementById(id);
   if (target) {
     target.classList.remove("hidden");
@@ -35,9 +31,6 @@ window.showSection = function (id) {
   if (id === "adminPage") {
     loadLaporan();
   }
-  window.showSection = showSection;
-  window.showMenu = showMenu;
-  window.masuk = masuk;
 };
 
 window.showMenu = function () {
@@ -64,34 +57,11 @@ window.bukaAdmin = function () {
 ///////////////////////////////
 // SUBMIT LAPORAN
 ///////////////////////////////
-// Ambil form
-const form = document.getElementById("laporForm");
-
-if (form) {
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-
-    const judul = document.getElementById("judulLaporan").value;
-    const kategori = document.getElementById("kategori").value;
-    const isi = document.getElementById("isilaporan").value;
-
-    // Kirim ke Firebase
-    await addDoc(collection(db, "laporan"), {
-      judul: judul || "Tidak ada judul",      // judul laporan
-      kategori,
-      isi,
-      tanggal: new Date()
-    });
-
-    alert("Laporan terkirim!");
-    form.reset();
-  });
-}
-
 document.getElementById("laporForm").addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const kategori = document.getElementById("kategori").value;
+  const judul = document.getElementById("judulLaporan").value;
   const isi = document.getElementById("isilaporan").value;
 
   const idLaporan = "SWK-" + Math.floor(Math.random() * 100000);
@@ -99,6 +69,7 @@ document.getElementById("laporForm").addEventListener("submit", async (e) => {
   await addDoc(collection(db, "laporan"), {
     id: idLaporan,
     kategori: kategori,
+    judul: judul;
     isi: isi,
     status: "Diterima"
   });
