@@ -293,7 +293,7 @@ form {
 }
 
 .navbar-logo:hover{
-  transform: scale(1.05);
+  transform: scale(1.50);
 }
 
 /* MENU */
@@ -331,8 +331,8 @@ padding-top:80px;
 }
 
 .welcome-logo{
-  width: 4500px;
-  margin: 20px 0 35px 0;
+  width: 450px;
+  margin: 40px 0 70px 0;
   filter: drop-shadow(0 8px 20px rgba(0,0,0,0.2));
 }
 
