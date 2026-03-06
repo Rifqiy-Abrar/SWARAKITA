@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -17,7 +18,6 @@
 
  <div class="topbar-menu">
     <span onclick="showSection('tentang')">Tentang</span>
-    <span onclick="showSection('tracking')">Pantau Laporan</span>
     <span onclick="bukaAdmin()">Admin</span>
   </div>
 </header>
@@ -119,32 +119,6 @@
           <button class="btn-start" type="button" onclick="showMenu()">Kembali</button>
       </div>
       </form>
-  </div>
-</section>
-
-<!-- tracking -->
-<!-- TRACKING -->
-<section id="tracking" class="content-section hidden">
-  <div class="content-box">
-
-    <h2>Cek Status Laporan</h2>
-
-    <input
-      type="text"
-      id="trackingId"
-      placeholder="Masukkan ID laporan"
-    >
-
-    <button class="btn-start" onclick="cekStatus()">
-      Cek Status
-    </button>
-
-    <div id="hasilTracking"></div>
-
-    <button class="btn-start" onclick="showMenu()">
-      Kembali
-    </button>
-
   </div>
 </section>
 <!-- KONFIRMASI -->
