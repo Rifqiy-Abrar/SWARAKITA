@@ -126,3 +126,34 @@ window.loadLaporan = async function() {
     `;
   });
 };
+
+function generateID(){
+  return "SWK-" + Math.floor(Math.random()*100000);
+}
+const idLaporan = generateID();
+
+window.cekStatus = async function(){
+
+const id = document.getElementById("trackingId").value;
+
+const q = query(collection(db,"laporan"));
+const snapshot = await getDocs(q);
+
+let ditemukan = false;
+
+snapshot.forEach(doc=>{
+  const data = doc.data();
+
+  if(data.id === id){
+    document.getElementById("statusHasil").innerText =
+    "Status laporan: " + data.status;
+    ditemukan = true;
+  }
+});
+
+if(!ditemukan){
+  document.getElementById("statusHasil").innerText =
+  "ID laporan tidak ditemukan";
+}
+
+}
