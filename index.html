@@ -16,6 +16,7 @@
 
  <div class="topbar-menu">
     <span onclick="showSection('tentang')">Tentang</span>
+    <span onclick="showSection('tracking')">Pantau Laporan</span>
     <span onclick="bukaAdmin()">Admin</span>
   </div>
 </header>
@@ -124,6 +125,24 @@
   <h2>Laporan Anda Telah Kami Terima</h2>
   <p>Terima kasih atas partisipasi Anda.</p>
   <button onclick="kembaliHome()">Kembali ke Beranda</button>
+</section>
+<!-- Tracking -->
+<section id="tracking" class="content-section hidden">
+  <div class="content-box">
+    <h2>Cek Status Laporan</h2>
+
+    <input type="text" id="cariJudul" placeholder="Masukkan judul laporan">
+
+    <button class="btn-start" onclick="cekTracking()">
+      Cek Status
+    </button>
+
+    <div id="hasilTracking"></div>
+
+    <button class="btn-start" onclick="showMenu()">
+      Kembali
+    </button>
+  </div>
 </section>
 <!-- semua isi website kamu di sini -->
     <script type="module" src="script.js"></script>
