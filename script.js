@@ -1,4 +1,4 @@
-jimport { db, collection, addDoc, getDocs, query, orderBy } from "./firebase.js";
+import { db, collection, addDoc, getDocs, query, orderBy } from "./firebase.js";
 
 ///////////////////////////////
 // MASUK DARI WELCOME
