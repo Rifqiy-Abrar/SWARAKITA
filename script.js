@@ -20,18 +20,21 @@ window.masuk = function () {
 ///////////////////////////////
 window.showSection = function (id) {
 
+  // sembunyikan semua section
   document.querySelectorAll(".content-section").forEach(section => {
     section.classList.add("hidden");
   });
 
-  const target = document.getElementById(id);
+  // SEMBUNYIKAN MENU JUGA
+  const menu = document.getElementById("menu");
+  if (menu) menu.classList.add("hidden");
 
+  // tampilkan target
+  const target = document.getElementById(id);
   if (target) {
     target.classList.remove("hidden");
   }
-
 };
-
 ///////////////////////////////
 // KEMBALI KE MENU
 ///////////////////////////////
@@ -41,8 +44,8 @@ window.showMenu = function () {
     section.classList.add("hidden");
   });
 
-  document.getElementById("menu").classList.remove("hidden");
-
+  const menu = document.getElementById("menu");
+  if (menu) menu.classList.remove("hidden");
 };
 
 ///////////////////////////////
