@@ -79,7 +79,7 @@ if (form) {
 
     const kategori = document.getElementById("kategori").value;
     const judul = document.getElementById("judulLaporan").value;
-    const isi = document.getElementById("isilaporan").value;
+    const isi = document.getElementById("isiLaporan").value;
 
     
 
