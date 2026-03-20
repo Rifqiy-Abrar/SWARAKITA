@@ -219,13 +219,29 @@ form {
     text-align: center;
 }
 
-#tentang, #panduan, #kirimlaporan {
+/* Section content semua di-center */
+#tentang, #panduan, #kirimLaporan, #tracking, #konfirmasi {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   text-align: center;
+}
+
+/* Pastikan .content-section tidak display flex by default */
+.content-section {
+  min-height: 100vh;
+  background-color: #f4f8fc;
+  padding: 20px;
+  transition: opacity 0.3s ease;
+}
+
+/* Override khusus untuk yang perlu flex */
+.content-section:not(.hidden) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .form-wrapper {
