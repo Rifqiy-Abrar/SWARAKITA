@@ -377,7 +377,7 @@ p.sub {
 /* Grid */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
   padding: 20px 40px 80px;
 }
@@ -385,8 +385,8 @@ p.sub {
 /* Card */
 .card {
   background: rgba(255,255,255,0.1);
-  border-radius: 20px;
-  padding: 25px;
+  border-radius: 10px;
+  padding: 10px;
   backdrop-filter: blur(10px);
   transition: 0.3s;
   cursor: pointer;
