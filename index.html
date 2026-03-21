@@ -22,27 +22,19 @@
 </header>
 <!-- WELCOME SECTION -->
 <section id="welcomeText" class="welcome-center">
-  <h1 class="welcome-title">
-    Selamat Datang di 
-  </h1>
-
-  <img src="logo.png" class="welcome-logo">
-  
-<button class="btn-start" onclick="masuk()">
-  Mulai Sekarang
-</button>
+  <h1 class="welcome-title">Selamat Datang di </h1>
+    <img src="logo.png" class="welcome-logo">
+  <button class="btn-start" onclick="masuk()">  Mulai Sekarang</button>
 </section>
 <!-- MENU SECTION -->
 <section id="menu" class="content-section hidden">
   <h2 class="section-title">Sistem Wadah Aspirasi Edukatif</h2>
-  <p class="welcome-subtitle">
-   Mari jelajahi layanan kami
-  </p>
-  <div class="cards">
-    <div class="card" onclick="showSection('tentang')">
-      <h3>Tentang SWARAKITA</h3>
-      <p>Apa itu <strong>SWARAKITA</strong>?</p>
-    </div>
+    <p class="welcome-subtitle">Mari jelajahi layanan kami</p>
+      <div class="cards">
+        <div class="card" onclick="showSection('tentang')">
+        <h3>Tentang SWARAKITA</h3>
+    <p>Apa itu <strong>SWARAKITA</strong>?</p>
+  </div>
 
     <div class="card" onclick="showSection('panduan')">
       <h3>Cara Keren berSWARA</h3>
@@ -79,7 +71,7 @@
               <div class="card"><h3>N - Netral</h3><small>Jujur itu kuat</small></div>
               <div class="card"><h3>G - Bijak</h3><small>Gunakan platform dengan tepat</small></div>
             </div>
-<button class="btn">Sampaikan SWARAmu </button>
+           <button onclick="showSection('konfirmasi')">Kirim SWARAmu</button>
         <button class="btn-start" onclick="showMenu()">Kembali</button>
     </div>
 </section>
@@ -121,25 +113,17 @@
 <!-- KONFIRMASI -->
 <section id="konfirmasi" class="content-section hidden">
   <h2>Laporan Anda Telah Kami Terima</h2>
-  <p>Terima kasih atas partisipasi Anda.</p>
+    <p>Terima kasih atas partisipasi Anda.</p>
   <button class="btn-start" onclick="showMenu()">Kembali</button>
 </section>
 <!-- Tracking -->
 <section id="tracking" class="content-section hidden">
   <div class="content-box">
     <h2>Cek Status Laporan</h2>
-
-    <input type="text" id="cariKode" placeholder="Masukkan kode tracking">
-
-    <button class="btn-start" onclick="cekTracking()">
-      Cek Status
-    </button>
-
-    <div id="hasilTracking"></div>
-
-    <button class="btn-start" onclick="showMenu()">
-      Kembali
-    </button>
+      <input type="text" id="cariKode" placeholder="Masukkan kode tracking">
+    <button class="btn-start" onclick="cekTracking()">Cek Status</button>
+  <div id="hasilTracking"></div>
+    <button class="btn-start" onclick="showMenu()">Kembali</button>
   </div>
 </section>
 <!-- semua isi website kamu di sini -->
