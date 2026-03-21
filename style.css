@@ -237,6 +237,15 @@ form {
   transition: opacity 0.3s ease;
 }
 
+/* Tambahkan ini — override #menu agar tidak ikut flex column */
+#menu {
+  display: block !important;
+  width: 100%;
+  padding: 80px 20px;
+  text-align: center;
+  min-height: 100vh;
+}
+
 .form-wrapper {
   width: 100%;
   max-width: 600px;
@@ -368,7 +377,7 @@ p.sub {
 /* Grid */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
   gap: 20px;
   padding: 20px 40px 80px;
 }
