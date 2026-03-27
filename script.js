@@ -193,5 +193,60 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+  fetch("panduan.html")
+    .then(res => res.text())
+    .then(data => {
+      const el = document.getElementById("panduan");
+      if (el) el.innerHTML = data;
+    });
+});
+
 cards.forEach(card => observer.observe(card));
 }); 
+
+let saringActive = null;
+ 
+  function saringToggle(k) {
+    if (saringActive === k) {
+      saringClose(k); saringActive = null;
+    } else {
+      if (saringActive) saringClose(saringActive);
+      saringOpen(k); saringActive = k;
+    }
+  }
+ 
+  function saringOpen(k) {
+    document.querySelectorAll('.saring-card').forEach(c => {
+      if (c.querySelector('.saring-letter') &&
+          c.querySelector('.saring-letter').textContent.trim().startsWith(k))
+        c.classList.add('active');
+    });
+    document.getElementById('saring-panel-' + k).classList.add('open');
+  }
+ 
+  function saringClose(k) {
+    document.querySelectorAll('.saring-card').forEach(c => {
+      if (c.querySelector('.saring-letter') &&
+          c.querySelector('.saring-letter').textContent.trim().startsWith(k))
+        c.classList.remove('active');
+    });
+    document.getElementById('saring-panel-' + k).classList.remove('open');
+  }
+ 
+  function saringCopy(k) {
+    const el  = document.getElementById('tpl-' + k);
+    const btn = document.getElementById('cbtn-' + k);
+    if (!el || !btn) return;
+    navigator.clipboard.writeText(el.textContent.trim()).then(() => {
+      btn.classList.add('copied');
+      btn.innerHTML = `<svg width="11" height="11" viewBox="0 0 12 12" fill="none">
+        <path d="M2 6L5 9L10 3" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg> Tersalin!`;
+      setTimeout(() => {
+        btn.classList.remove('copied');
+        btn.innerHTML = `<svg width="11" height="11" viewBox="0 0 12 12" fill="none">
+          <rect x="1" y="3" width="7" height="8" rx="1.5" stroke="#fff" stroke-width="1.3"/>
+          <path d="M3 3V2a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1h-1" stroke="#fff" stroke-width="1.3"/>
+          </svg> Salin`;
+      }, 2000);
+    });
+  }
