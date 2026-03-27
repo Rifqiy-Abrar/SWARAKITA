@@ -250,3 +250,19 @@ let saringActive = null;
       }, 2000);
     });
   }
+
+window.saringToggle = function(huruf) {
+  const panel = document.getElementById("saring-panel-" + huruf);
+
+  if (panel.classList.contains("show")) {
+    panel.classList.remove("show");
+  } else {
+    // tutup semua panel dulu
+    document.querySelectorAll(".saring-panel").forEach(p => {
+      p.classList.remove("show");
+    });
+
+    // buka yang diklik
+    panel.classList.add("show");
+  }
+};
