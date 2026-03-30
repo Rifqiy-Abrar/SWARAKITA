@@ -22,12 +22,10 @@
     h1 {
       font-size: 36px;
       font-weight: 700;
-      color: #0B2A4A;
+      color: #000000;
       margin: 0 0 6px;
       animation: fadeDown 0.8s ease;
     }
- 
-    .sharing-word { color: #1ECAD3; }
  
     p.sub {
       font-size: 13px;
